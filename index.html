@@ -1,168 +1,147 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario Newsletter</title>
-    <style>
-        /* Estilos generales */
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulario Newsletter</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+    }
 
-        .formulario-container {
-            padding: 20px;
-            margin: 0 auto;
-            border-radius: 10px;
-        }
+    .formulario-container {
+        padding: 20px;
+        margin: 0 auto;
+        max-width: 600px;
+        border-radius: 10px;
+    }
 
-        .tituloFormulario {
-            font-weight: 800;
-            color: white;
-            font-size: 1.5rem;
-            text-align: center;
-        }
+    .tituloFormulario {
+        font-weight: 800;
+        color: white;
+        font-size: 1.5rem;
+        text-align: center;
+    }
 
-        .textoFormulario {
-            font-weight: 400;
-            text-align: center;
-            color: white;
-            margin-bottom: 20px;
-        }
+    .textoFormulario {
+        font-weight: 400;
+        text-align: center;
+        color: white;
+        margin-bottom: 20px;
+    }
 
-        .cajaFormulario {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin-bottom: 15px;
-        }
+    .cajaFormulario {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 15px;
+    }
 
-        .campos {
-            width: 48%;
-            margin-bottom: 15px;
-        }
+    .campos {
+        width: 48%;
+        margin-bottom: 15px;
+    }
 
-        label {
-                color: white;
-        }
+    label {
+        color: white;
+    }
 
-        .form-control {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
 
-        .form-select{
-            width: 50%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
+    .form-select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
 
-        .form-check {
-            text-align: center;
-            margin-top: 20px;
-        }
+    .form-check {
+        text-align: center;
+        margin-top: 20px;
+    }
 
-        .form-check-label {
-            color: white;
-            font-size: 0.9rem;
-        }
+    .form-check-label {
+        color: white;
+        font-size: 0.9rem;
+    }
 
-        .btn {
-            background-color: #d9534f;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            display: block;
-            margin: 20px auto 0;
-        }
+    .btn {
+        background-color: #d9534f;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        display: block;
+        margin: 20px auto 0;
+    }
 
-        .btn:disabled {
-            background-color: #ccc;
-        }
-
-        /* Estilos para dispositivos móviles */
-        @media (max-width: 767px) {
-            .campos {
-                width: 100%;
-            }
-        }
-    </style>
+    .btn:disabled {
+        background-color: #ccc;
+    }
+</style>
 </head>
 <body>
-    <div class="formulario-container">
-        <!-- Título del formulario -->
-        <h4 class="tituloFormulario">
-            ¿Quieres estar al día con los mejores<br> tips y novedades para tus animales?
-        </h4>
-        <p class="textoFormulario">
-            Suscríbete a nuestro newsletter y recibe información exclusiva directamente en tu bandeja de entrada.
-        </p>
+<div class="formulario-container">
+    <h4 class="tituloFormulario">
+        ¿Quieres estar al día con los mejores<br> tips y novedades para tus animales?
+    </h4>
+    <p class="textoFormulario">
+        Suscríbete a nuestro newsletter y recibe información exclusiva directamente en tu bandeja de entrada.
+    </p>
 
-        <!-- Formulario -->
-        <form id="miFormulario">
-            <!-- Primera fila: Nombre y Apellido -->
-            <div class="cajaFormulario">
-                <div class="campos">
-                    <label for="nombre" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" required>
-                </div>
-                <div class="campos">
-                    <label for="apellido" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" id="apellido" required>
-                </div>
+    <form id="miFormulario">
+        <div class="cajaFormulario">
+            <div class="campos">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombre" required>
             </div>
-
-            <!-- Segunda fila: Celular y Correo -->
-            <div class="cajaFormulario">
-                <div class="campos">
-                    <label for="celular" class="form-label">Celular</label>
-                    <input type="number" class="form-control" id="celular" required>
-                </div>
-                <div class="campos">
-                    <label for="correo" class="form-label">Correo electrónico</label>
-                    <input type="email" class="form-control" id="correo" required>
-                </div>
+            <div class="campos">
+                <label for="apellido">Apellido</label>
+                <input type="text" class="form-control" id="apellido" required>
             </div>
-
-            <!-- Tercera fila: Departamento y Ciudad -->
-            <div class="cajaFormulario">
-                <div class="campos">
-                    <label for="departamento" class="form-label">Departamento</label>
-                    <select class="form-select" id="departamento" required></select>
-                </div>
-                <div class="campos">
-                    <label for="ciudad" class="form-label">Ciudad</label>
-                    <select class="form-select" id="ciudad" required></select>
-                </div>
+        </div>
+        <div class="cajaFormulario">
+            <div class="campos">
+                <label for="celular">Celular</label>
+                <input type="number" class="form-control" id="celular" required>
             </div>
-
-            <!-- Checkbox de términos y condiciones -->
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="agreeCheckbox">
-                <label class="form-check-label" for="agreeCheckbox">Autorizo el tratamiento de mis datos personales y envío de marketing.</label>
+            <div class="campos">
+                <label for="correo">Correo electrónico</label>
+                <input type="email" class="form-control" id="correo" required>
             </div>
+        </div>
+        <div class="cajaFormulario">
+            <div class="campos">
+                <label for="departamento">Departamento</label>
+                <select class="form-select" id="departamento" required>
+                    <option value="">Selecciona un departamento</option>
+                </select>
+            </div>
+            <div class="campos">
+                <label for="ciudad">Ciudad</label>
+                <select class="form-select" id="ciudad" required>
+                    <option value="">Selecciona una ciudad</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="agreeCheckbox" onclick="toggleButton()">
+            <label class="form-check-label" for="agreeCheckbox">Autorizo el tratamiento de mis datos personales y envío de marketing.</label>
+        </div>
+        <button type="submit" class="btn" id="enviarBtn" disabled>Enviar</button>
+    </form>
+</div>
 
-            <!-- Botón de enviar -->
-            <button type="submit" class="btn" id="enviarBtn" disabled>Enviar</button>
-        </form>
-    </div>
 
-
-
-
-
-<script>
-    
+<script>    
     
      // funcion departamento ciudad
  document.addEventListener("DOMContentLoaded", function () {
@@ -456,84 +435,82 @@
     
 
     const departamentoSelect = document.getElementById("departamento");
-    const ciudadSelect = document.getElementById("ciudad");
+            const ciudadSelect = document.getElementById("ciudad");
+            const enviarBtn = document.getElementById("enviarBtn");
+            const agreeCheckbox = document.getElementById("agreeCheckbox");
 
-    // Poblar el select de departamentos
-    colombiaData.forEach(item => {
-        const option = document.createElement("option");
-        option.value = item.departamento;
-        option.textContent = item.departamento;
-        departamentoSelect.appendChild(option);
-    });
+            // Poblar los departamentos
+            colombiaData.forEach(item => {
+                const option = document.createElement("option");
+                option.value = item.departamento;
+                option.textContent = item.departamento;
+                departamentoSelect.appendChild(option);
+            });
 
-    // Actualizar las ciudades al seleccionar un departamento
-    departamentoSelect.addEventListener("change", function () {
-        const departamentoSeleccionado = this.value;
-        ciudadSelect.innerHTML = '<option value="">Selecciona una ciudad</option>'; // Limpiar las ciudades previas
-        ciudadSelect.disabled = true;
+            // Actualizar las ciudades
+            departamentoSelect.addEventListener("change", function () {
+                const departamentoSeleccionado = this.value;
+                ciudadSelect.innerHTML = '<option value="">Selecciona una ciudad</option>';
+                ciudadSelect.disabled = true;
 
-        if (departamentoSeleccionado) {
-            const departamento = colombiaData.find(
-                item => item.departamento === departamentoSeleccionado
-            );
+                if (departamentoSeleccionado) {
+                    const departamento = colombiaData.find(
+                        item => item.departamento === departamentoSeleccionado
+                    );
+                    if (departamento) {
+                        departamento.ciudades.forEach(ciudad => {
+                            const option = document.createElement("option");
+                            option.value = ciudad;
+                            option.textContent = ciudad;
+                            ciudadSelect.appendChild(option);
+                        });
+                        ciudadSelect.disabled = false;
+                    }
+                }
+            });
 
-            if (departamento) {
-                departamento.ciudades.forEach(ciudad => {
-                    const option = document.createElement("option");
-                    option.value = ciudad;
-                    option.textContent = ciudad;
-                    ciudadSelect.appendChild(option);
-                });
+            // Habilitar o deshabilitar el botón de enviar
+            agreeCheckbox.addEventListener("change", function () {
+                enviarBtn.disabled = !agreeCheckbox.checked;
+            });
 
-                ciudadSelect.disabled = false; // Habilitar el select de ciudades
-            }
-        }
-    });
+            // Manejo del envío del formulario
+            document.getElementById("miFormulario").addEventListener("submit", function (event) {
+                event.preventDefault();
 
-    // Activar/desactivar el botón de enviar dependiendo del estado del checkbox
-    const checkbox = document.getElementById("agreeCheckbox");
-    const enviarBtn = document.getElementById("enviarBtn");
-    checkbox.addEventListener("change", function () {
-        enviarBtn.disabled = !checkbox.checked;
-    });
+                const data = {
+                    nombre: document.getElementById("nombre").value,
+                    apellido: document.getElementById("apellido").value,
+                    celular: document.getElementById("celular").value,
+                    correo: document.getElementById("correo").value,
+                    departamento: departamentoSelect.value || null,
+                    ciudad: ciudadSelect.value || null
+                };
 
-    // Manejo del envío del formulario
-    const formulario = document.getElementById("miFormulario");
-    formulario.addEventListener("submit", function (event) {
-        event.preventDefault();
+                // Validación adicional
+                if (!data.departamento || !data.ciudad) {
+                    alert("Por favor, selecciona un departamento y una ciudad.");
+                    return;
+                }
 
-        const data = {
-            nombre: document.getElementById("nombre").value,
-            apellido: document.getElementById("apellido").value,
-            celular: document.getElementById("celular").value,
-            correo: document.getElementById("correo").value,
-            departamento: departamentoSelect.value,
-            ciudad: ciudadSelect.value,
-        };
-
-        fetch('https://hook.us2.make.com/zy7zdxrn7mn30de3ewjbldvvng78m9ni', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-        })
-        .then(response => {
-            if (response.ok) {
-                alert("¡Gracias por suscribirte! Pronto recibirás novedades.");
-                window.location.href = "https://www.finca.co/registro-exitoso";
-            } else {
-                alert("Hubo un problema al enviar la información. Inténtalo nuevamente.");
-            }
-        })
-        .catch(error => {
-            console.error("Error:", error);
-            alert("Hubo un error en la conexión. Inténtalo más tarde.");
+                // Enviar los datos al webhook
+                fetch("https://hook.us2.make.com/zy7zdxrn7mn30de3ewjbldvvng78m9ni", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data)
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            alert("¡Gracias por suscribirte! Pronto recibirás novedades.");
+                            window.location.href = "https://www.finca.co/registro-exitoso";
+                        } else {
+                            alert("Hubo un problema al enviar la información. Inténtalo nuevamente.");
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error:", error);
+                        alert("Hubo un error en la conexión. Inténtalo más tarde.");
+                    });
+            });
         });
-    });
-});
-    
-    
 </script>
-
-
-    </body>
-</html>
