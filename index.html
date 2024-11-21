@@ -515,7 +515,7 @@
                     .then(response => {
                         if (response.ok) {
                             alert("¡Gracias por suscribirte! Pronto recibirás novedades.");
-                            window.location.href = "https://www.finca.co/registro-exitoso";
+                             window.top.location.href  = 'https://www.finca.co/registro-exitoso';
                         } else {
                             alert("Hubo un problema al enviar la información. Inténtalo nuevamente.");
                         }
