@@ -14,6 +14,10 @@
 
         .formulario-container {
             padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #333;
+            border-radius: 10px;
         }
 
         .tituloFormulario {
@@ -27,18 +31,19 @@
             font-weight: 400;
             text-align: center;
             color: white;
+            margin-bottom: 20px;
         }
 
         .cajaFormulario {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+            margin-bottom: 15px;
         }
 
         .campos {
-            padding: 0 20px;
-            width: 50%;
-            color: white;
+            width: 48%;
+            margin-bottom: 15px;
         }
 
         .form-control,
@@ -51,11 +56,13 @@
         }
 
         .form-check {
+            text-align: center;
             margin-top: 20px;
         }
 
-        .form-check-input {
-            margin-right: 10px;
+        .form-check-label {
+            color: white;
+            font-size: 0.9rem;
         }
 
         .btn {
@@ -66,62 +73,12 @@
             border-radius: 5px;
             font-size: 1rem;
             cursor: pointer;
+            display: block;
+            margin: 20px auto 0;
         }
 
         .btn:disabled {
             background-color: #ccc;
-        }
-
-        .error-popup,
-        .spinner-popup,
-        .loading-popup,
-        .popup {
-            display: none;
-        }
-
-        /* Popups */
-        .popup {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-
-        .popup-inner {
-            background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            width: 90%;
-            max-height: 90%;
-            overflow-y: auto;
-        }
-
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 9998;
-        }
-
-        .spinner-popup {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 9999;
-            background-color: white;
-            padding: 20px;
-            text-align: center;
-            border-radius: 10px;
         }
 
         /* Estilos para dispositivos móviles */
@@ -129,14 +86,11 @@
             .campos {
                 width: 100%;
             }
-            .cajaFormulario {
-                flex-direction: column;
-            }
         }
     </style>
 </head>
 <body>
-    <div class="container formulario-container">
+    <div class="formulario-container">
         <!-- Título del formulario -->
         <h4 class="tituloFormulario">
             ¿Quieres estar al día con los mejores<br> tips y novedades para tus animales?
@@ -146,50 +100,55 @@
         </p>
 
         <!-- Formulario -->
-        <form id="miFormulario" class="d-flex flex-column py-0 px-4">
-            <div class="d-flex flex-wrap cajaFormulario">
-                <!-- Nombre -->
-                <div class="col-lg-6 mb-3 campos">
+        <form id="miFormulario">
+            <!-- Primera fila: Nombre y Apellido -->
+            <div class="cajaFormulario">
+                <div class="campos">
                     <label for="nombre" class="form-label">Nombre</label>
                     <input type="text" class="form-control" id="nombre" required>
                 </div>
-                <!-- Apellido -->
-                <div class="col-lg-6 mb-3 campos">
+                <div class="campos">
                     <label for="apellido" class="form-label">Apellido</label>
                     <input type="text" class="form-control" id="apellido" required>
                 </div>
-                <!-- Celular -->
-                <div class="col-lg-6 mb-3 campos">
+            </div>
+
+            <!-- Segunda fila: Celular y Correo -->
+            <div class="cajaFormulario">
+                <div class="campos">
                     <label for="celular" class="form-label">Celular</label>
                     <input type="number" class="form-control" id="celular" required>
                 </div>
-                <!-- Correo -->
-                <div class="col-lg-6 mb-3 campos">
+                <div class="campos">
                     <label for="correo" class="form-label">Correo electrónico</label>
                     <input type="email" class="form-control" id="correo" required>
                 </div>
-                <!-- Departamento -->
-                <div class="col-lg-6 mb-3 campos">
+            </div>
+
+            <!-- Tercera fila: Departamento y Ciudad -->
+            <div class="cajaFormulario">
+                <div class="campos">
                     <label for="departamento" class="form-label">Departamento</label>
                     <select class="form-select" id="departamento" required></select>
                 </div>
-                <!-- Ciudad -->
-                <div class="col-lg-6 mb-3 campos">
+                <div class="campos">
                     <label for="ciudad" class="form-label">Ciudad</label>
                     <select class="form-select" id="ciudad" required></select>
                 </div>
             </div>
-            <!-- Checkbox -->
-            <div class="mb-3 form-check">
+
+            <!-- Checkbox de términos y condiciones -->
+            <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="agreeCheckbox">
                 <label class="form-check-label" for="agreeCheckbox">Autorizo el tratamiento de mis datos personales y envío de marketing.</label>
             </div>
+
             <!-- Botón de enviar -->
-            <div class="text-center mt-3">
-                <button type="submit" class="btn" id="enviarBtn" disabled>Enviar</button>
-            </div>
+            <button type="submit" class="btn" id="enviarBtn" disabled>Enviar</button>
         </form>
     </div>
+
+
 
 
 
