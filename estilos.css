@@ -91,3 +91,158 @@
     bottom: 0px;
     color:#00A650;
   }
+
+---------------------------------------------
+FORMULARIO styles
+--------------------------------------------- 
+*/
+
+#formulario{
+    padding: 0px;
+}
+
+.colIMG{
+    background-image: url("https://www.finca.co/Portals/finca/Tropico%20Bajo/handsome-caucasian-smiling-farmer-plaid-shirt-jeans-standing-outdoors-with-arms-crossed%201.webp");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.tituloFormulario{
+
+    font-weight: 800;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.textoFormulario{
+    font-weight: 400;
+}
+
+.campos {
+    padding: 0px 20px;
+    width: 50%;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+---------------------------------------------
+MEDIA QUERYS styles
+--------------------------------------------- 
+*/
+
+/* Estilos para dispositivos mÃ³viles (telÃ©fonos) */
+@media only screen and (max-width: 767px) {
+
+
+    #portafolio p {
+        color: var(--textoTB);
+        margin-bottom: 20px;
+        width: auto;
+    }
+
+
+
+#portafolio img {
+    max-width: 100%;
+}
+
+.formula{
+    width: 80%;
+}
+
+.titulo{
+    width: auto;
+}
+
+.videoInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.tituloVideo{
+    text-align: center;
+    line-height: 2rem;
+}
+
+.tituloAtributos{
+    line-height: 2rem;
+    
+}
+
+.parrafoTB{
+    text-align: center;
+}
+
+.informacionIMG{
+    width: 100%;
+}
+
+.informacionTEXTO{
+    padding: 20px;
+    text-align: center;
+}
+
+
+.cajaFormulario{
+    display: flex ;
+    flex-direction: column ;
+}
+
+.campos{
+    width: 100%;
+}
+
+#formulario{
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.colIMG{
+    width: 100%;
+    height: 30vh;
+}
+
+}
+
+
+
+
+/* Estilos para iPads en orientaciÃ³n vertical */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+
+
+
+
+}
+
+/* Estilos para iPads en orientaciÃ³n horizontal */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+   
+
+
+
+
+}
+
