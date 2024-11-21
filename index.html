@@ -1,66 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Newsletter</title>
+    <style>
+        /* Estilos generales */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
 
-    <h4 class="tituloFormulario">
-        ¿Quieres estar al día con los mejores<br> tips y novedades para tus animales?
-    </h4>
-    <p class="textoFormulario text-center text-white">
-        Suscríbete a nuestro newsletter y recibe información exclusiva directamente en tu bandeja de entrada.
-    </p>
+        .formulario-container {
+            padding: 20px;
+        }
 
-    <form id="miFormulario" class="d-flex flex-column py-0 px-4 ">
-            <div>
-                <div class="d-flex flex-wrap cajaFormulario">
-                    <!-- Nombre -->
-                    <div class="col-lg-6 mb-3 campos">
-                        <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" required>
-                    </div>
-                    <!-- Apellido -->
-                    <div class="col-lg-6 mb-3 campos">
-                        <label for="apellido" class="form-label">Apellido</label>
-                        <input type="text" class="form-control" id="apellido" required>
-                    </div>
-                    <!-- Celular -->
-                    <div class="col-lg-6 mb-3 campos">
-                        <label for="celular" class="form-label">Celular</label>
-                        <input type="number" class="form-control" id="celular" required>
-                    </div>
-                    <!-- Correo electrónico -->
-                    <div class="col-lg-6 mb-3 campos">
-                        <label for="correo" class="form-label">Correo electrónico</label>
-                        <input type="email" class="form-control" id="correo" required>
-                    </div>
-                    
-                    
-                    <!-- Departamento -->
-                    <div class="col-lg-6 mb-3 campos">
-                        <label for="departamento" class="form-label">Departamento</label>
-                        <select class="form-select" id="departamento" onchange="Ciudades()" required>
-                         
+        .tituloFormulario {
+            font-weight: 800;
+            color: white;
+            font-size: 1.5rem;
+            text-align: center;
+        }
 
-                        </select>
-                    </div>
+        .textoFormulario {
+            font-weight: 400;
+            text-align: center;
+            color: white;
+        }
 
+        .cajaFormulario {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
 
-                     <!-- Ciudad -->
-                    <div class="col-lg-6 mb-3 campos">
-                        <label for="ciudad" class="form-label">Ciudad</label>
-                        <select class="form-select" id="ciudad" required>
-                           
-                        </select>
-                    </div>
-            
-            </div>
+        .campos {
+            padding: 0 20px;
+            width: 50%;
+            color: white;
+        }
+
+        .form-control,
+        .form-select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-check {
+            margin-top: 20px;
+        }
+
+        .form-check-input {
+            margin-right: 10px;
+        }
+
+        .btn {
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .btn:disabled {
+            background-color: #ccc;
+        }
+
+        .error-popup,
+        .spinner-popup,
+        .loading-popup,
+        .popup {
+            display: none;
+        }
+
+        /* Popups */
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .popup-inner {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            width: 90%;
+            max-height: 90%;
+            overflow-y: auto;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9998;
+        }
+
+        .spinner-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        /* Estilos para dispositivos móviles */
+        @media (max-width: 767px) {
+            .campos {
+                width: 100%;
+            }
+            .cajaFormulario {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container formulario-container">
+        <!-- Título del formulario -->
+        <h4 class="tituloFormulario">
+            ¿Quieres estar al día con los mejores<br> tips y novedades para tus animales?
+        </h4>
+        <p class="textoFormulario">
+            Suscríbete a nuestro newsletter y recibe información exclusiva directamente en tu bandeja de entrada.
+        </p>
+
+        <!-- Formulario -->
+        <form id="miFormulario" class="d-flex flex-column py-0 px-4">
+            <div class="d-flex flex-wrap cajaFormulario">
+                <!-- Nombre -->
+                <div class="col-lg-6 mb-3 campos">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" required>
+                </div>
+                <!-- Apellido -->
+                <div class="col-lg-6 mb-3 campos">
+                    <label for="apellido" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" id="apellido" required>
+                </div>
+                <!-- Celular -->
+                <div class="col-lg-6 mb-3 campos">
+                    <label for="celular" class="form-label">Celular</label>
+                    <input type="number" class="form-control" id="celular" required>
+                </div>
+                <!-- Correo -->
+                <div class="col-lg-6 mb-3 campos">
+                    <label for="correo" class="form-label">Correo electrónico</label>
+                    <input type="email" class="form-control" id="correo" required>
+                </div>
+                <!-- Departamento -->
+                <div class="col-lg-6 mb-3 campos">
+                    <label for="departamento" class="form-label">Departamento</label>
+                    <select class="form-select" id="departamento" required></select>
+                </div>
+                <!-- Ciudad -->
+                <div class="col-lg-6 mb-3 campos">
+                    <label for="ciudad" class="form-label">Ciudad</label>
+                    <select class="form-select" id="ciudad" required></select>
+                </div>
             </div>
             <!-- Checkbox -->
             <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="agreeCheckbox">
-                <label class="form-check-label" for="agreeCheckbox" id="popupTrigger">Autorizo el tratamiento de mis datos personales y envío de marketing.</label>
+                <label class="form-check-label" for="agreeCheckbox">Autorizo el tratamiento de mis datos personales y envío de marketing.</label>
             </div>
             <!-- Botón de enviar -->
             <div class="text-center mt-3">
-                <button type="submit" class="btn btn-redTB" id="enviarBtn" disabled>Enviar</button>
+                <button type="submit" class="btn" id="enviarBtn" disabled>Enviar</button>
             </div>
-    </form>
+        </form>
+    </div>
+
+
 
 <script>
     
@@ -434,3 +565,7 @@
     
     
 </script>
+
+
+    </body>
+</html>
